@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Narrator</title>
+  </head>
+  <body>
+    <h1>JAVIS</h1>
+    <input type="text" id="text-to-speak" value="hello friends i m going to speak about super computer">
+    <button onclick="speak()">Speak</button>
+
+    <script>
+      function speak() {
+        const text = document.getElementById("text-to-speak").value;
+        const speech = new SpeechSynthesisUtterance(text);
+        speech.lang = 'en-US';
+        speech.volume = 1;
+        speech.rate = 1;
+        speech.pitch = 1;
+        window.speechSynthesis.speak(speech);
+      }
+    </script>
+  </body>
+</html>
